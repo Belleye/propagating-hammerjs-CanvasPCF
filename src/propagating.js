@@ -36,14 +36,14 @@ export default function propagating(hammer, options) {
 
     var PropagatingHammer = function(element, options) {
       var o = Object.create(_options);
-      if (options) Hammer.assign(o, options);
+      if (options) Object.assign(o, options); // if (options) Hammer.assign(o, options);
       return propagating(new Hammer(element, o), o);
     };
-    Hammer.assign(PropagatingHammer, Hammer);
+    Object.assign(PropagatingHammer, Hammer); // Hammer.assign(PropagatingHammer, Hammer);
 
     PropagatingHammer.Manager = function (element, options) {
       var o = Object.create(_options);
-      if (options) Hammer.assign(o, options);
+      if (options) Object.assign(o, options); // if (options) Hammer.assign(o, options);
       return propagating(new Hammer.Manager(element, o), o);
     };
 
